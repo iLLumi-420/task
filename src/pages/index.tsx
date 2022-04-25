@@ -7,6 +7,8 @@ import { request, gql } from "graphql-request";
 
 const endpoint = 'https://graphqlzero.almansi.me/api'
 
+const client = new QueryClient
+
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -17,7 +19,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        
+        <h1>Task</h1>
       </main>
 
      
