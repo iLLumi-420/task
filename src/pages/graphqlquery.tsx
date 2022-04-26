@@ -7,6 +7,7 @@ import graphqlRequestClient from "../lib/client/graphqlRequestClient";
 import styles from '../styles/GraphqlQuery.module.scss'
 import { SearchIcon, UserAddIcon } from '@heroicons/react/solid'
 import TableHeader from "../components/tableHeader/TableHeader";
+import TableContent from "../components/tableContent/TableContent";
 
 const query = gql`
     query getALLUsers{
@@ -26,7 +27,9 @@ const query = gql`
     }
         
 `
+const func = ()=>{
 
+}
 
 const GetRequestQuery:FC = () => {
     const { isLoading, error, data } = useQuery<GraphQLResponse, Error, IUser[]>(
@@ -55,16 +58,8 @@ const GetRequestQuery:FC = () => {
                 </div>
                 <div className={styles.tableContainer}>
                     <TableHeader/>
-                    {users?.map((user:IUser)=>{
-                        console.log(user)
-                        return (
-                            <div key={user.id}>
-                                <p>{user.name}</p>
-                                <p>{user.phone}</p>
-                                <p>{user.email}</p>
-                            </div>
-                        )
-                    })}
+                    {users?.map((user:IUser) => <TableContent props = {user}/>
+                    )}
                 </div>
             </>
         )

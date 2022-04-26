@@ -1,18 +1,20 @@
 import React from 'react' 
+import { IUser } from '../../lib/interfaces/IUsers'
 import styles from './tableContent.module.scss'
 
-const TableContent = () => {
+const TableContent = ( {props} : any) => {
+  console.log(props,'this')
   return (
-    <div className={styles.tableHeader}>
-        <div className={styles.nameContainer}>
-            <input type="checkbox" name="" id="" />
-            <h2 className={styles.name}>Name</h2>
-        </div>
-        <h2>Username</h2>
-        <h2>Email</h2>
-        <h2>Phone</h2>
-        <h2>Website</h2>
-        <h2>Address</h2>
+    <div className={styles.content}>
+      <div className={styles.nameContainer}>
+        <input type="checkbox" name="" id="" />
+        <p className={styles.name}>{props.name}</p>
+      </div>
+      <p className={styles.p}>{props.username}</p>
+      <p className={styles.p} >{props.email}</p>
+      <p className={styles.p}>{props.phone}</p>
+      <p className={styles.p}>{props.website}</p>
+      <p className={styles.p}>{props.address.street}</p>
     </div>
   )
 }

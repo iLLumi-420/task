@@ -1,7 +1,8 @@
 import React from 'react'
+import { IUser } from '../../lib/interfaces/IUsers'
 import styles from './TableHeader.module.scss'
 
-const TableHeader = (  ) => {
+const TableHeader = () => {
   return (
     <div className={styles.tableHeader}>
         <div className={styles.nameContainer}>

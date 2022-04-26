@@ -1,0 +1,22 @@
+.content{
+    width: 100vw;
+    height: fit-content;
+    margin: 0 1rem;
+    display: flex;
+    justify-content: space-between
+}
+.nameContainer{
+    display: flex;
+    width: 16vw;
+    max-width: fit-content;
+
+}
+.name{
+    text-align: left;
+    margin-left: 1rem;
+}
+.p{
+    width: 16vw;
+    max-width: min-content;
+
+}
