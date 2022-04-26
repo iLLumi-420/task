@@ -2,14 +2,12 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import { QueryClient, QueryClientProvider, useQuery, useQueryClient } from 'react-query'
-import { request, gql } from "graphql-request";
 
-const endpoint = 'https://graphqlzero.almansi.me/api'
 
-const client = new QueryClient
 
 const Home: NextPage = () => {
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -19,7 +17,8 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1>Task</h1>
+        
+
       </main>
 
      
