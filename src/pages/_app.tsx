@@ -1,6 +1,5 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import Wrapper from '../components/wrapper/Wrapper'
 import {
   QueryClient,
   QueryClientProvider,
@@ -21,9 +20,7 @@ const MyApp:FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
     <QueryClientProvider client={client}>
       <ReactQueryDevtools />
-      <Wrapper>
         <Component {...pageProps} />
-      </Wrapper>
     </QueryClientProvider>
 
   )

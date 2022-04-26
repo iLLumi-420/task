@@ -4,6 +4,9 @@ import { GraphQLResponse } from "graphql-request/dist/types";
 import { FC } from "react";
 import { IUser } from "../lib/interfaces/IUsers";
 import graphqlRequestClient from "../lib/client/graphqlRequestClient"; 
+import styles from '../styles/GraphqlQuery.module.scss'
+import { SearchIcon, UserAddIcon } from '@heroicons/react/solid'
+import TableHeader from "../components/tableHeader/TableHeader";
 
 const query = gql`
     query getALLUsers{
@@ -15,6 +18,9 @@ const query = gql`
                 email
                 phone
                 website
+                address{
+                    street
+                }
             }
         }
     }
@@ -36,19 +42,29 @@ const GetRequestQuery:FC = () => {
         const users = data['data']
         console.log(users)
         return (
-            <>
-                {users?.map((user:IUser)=>{
-                    console.log(user)
-                    return (
-                        <div key={user.id}>
-                            <p>{user.name}</p>
-                            <p>{user.phone}</p>
-                            <p>{user.email}</p>
-                        </div>
-                    )
-                })}
-                <div>
-                    ok
+            <>  
+                <div className={styles.header}>
+                    <h2>Users</h2>
+                    <div className={styles.headerEnd}>
+                        <SearchIcon className={styles.searchIcon} />
+                        <button className={styles.addUserButton}>
+                            <UserAddIcon height={15} width={15} className={styles.addUserIcon}/>
+                            <p className={styles.addUser}>Add user</p>
+                        </button>
+                    </div>
+                </div>
+                <div className={styles.tableContainer}>
+                    <TableHeader/>
+                    {users?.map((user:IUser)=>{
+                        console.log(user)
+                        return (
+                            <div key={user.id}>
+                                <p>{user.name}</p>
+                                <p>{user.phone}</p>
+                                <p>{user.email}</p>
+                            </div>
+                        )
+                    })}
                 </div>
             </>
         )

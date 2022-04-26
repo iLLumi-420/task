@@ -1,0 +1,18 @@
+.tableHeader{
+    width: 100vw;
+    height: fit-content;
+    margin: 0 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(205, 192, 192);
+}
+.input{
+    height: 10px;
+    width: 10px;
+}
+.nameContainer{
+    display: flex;
+}
+.name{
+    margin-left: 1rem;
+}
