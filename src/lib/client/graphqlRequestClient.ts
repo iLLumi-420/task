@@ -1,11 +1,14 @@
-import { GraphQLClient } from "graphql-request";
+import { GraphQLClient } from 'graphql-request';
 
 const requestHeaders = {
-    authorization: 'Beaerer TOKEN',
-}
+  authorization: 'Beaerer TOKEN',
+};
 
-const graphqlRequestClient = new GraphQLClient(process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT as string, {
+const graphqlRequestClient = new GraphQLClient(
+  process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT as string,
+  {
     headers: requestHeaders,
-})
+  }
+);
 
-export default graphqlRequestClient
+export default graphqlRequestClient;
