@@ -2,12 +2,11 @@ import React from 'react'
 import { IUser } from '../../lib/interfaces/IUsers'
 import styles from './tableContent.module.scss'
 
-const TableContent = ( {props} : any) => {
-  console.log(props,'this')
+const TableContent = ( {props, isClicked} : any) => {
   return (
-    <div className={styles.content}>
+    <div className={styles.content} key={props.id}>
       <div className={styles.nameContainer}>
-        <input type="checkbox" name="" id="" />
+        <input type="checkbox" name="" id="" checked={isClicked}/>
         <p className={styles.name}>{props.name}</p>
       </div>
       <p className={styles.items}>{props.username}</p>
