@@ -37,12 +37,16 @@ const query = gql`
 
 const Home: NextPage = () => {
     const [ isClicked, setIsClicked  ]  = useState(false)
+    const [ allClicked, setAllClicked ] = useState<string[]>([])
+
     const { isLoading, error, data } = useQuery<GraphQLResponse, Error, IUser[]>(
     'users',
     async ()=>{
         return graphqlRequestClient.request(query)},
     {select: (response)=> response.users  })
-
+    
+    console.log(allClicked)
+    
     if(isLoading) return <p>Loading...</p>
     if(error) return <p>Errors: {error.message}</p>
     if(data){
@@ -62,7 +66,9 @@ const Home: NextPage = () => {
                 </div>
                 <div className={styles.tableContainer}>
                     <TableHeader isClicked={isClicked} setIsClicked={setIsClicked} />
-                    {users?.map((user:IUser) => <TableContent props = {user} isClicked={isClicked} />)}
+                    {users?.map((user:IUser) => {
+                        return <TableContent props = {user} isClicked={isClicked} allClicked={allClicked} setAllClicked={setAllClicked}/>
+                    })}
                 </div>
             </>
         )

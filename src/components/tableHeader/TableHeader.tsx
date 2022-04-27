@@ -12,7 +12,6 @@ type Props = {
 const TableHeader = ({isClicked , setIsClicked}:Props) => {
   const checkOnClick = ()=>{
     setIsClicked(!isClicked)
-    console.log(isClicked)
   }
   return (
     <div className={styles.tableHeader}>
