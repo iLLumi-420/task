@@ -3,14 +3,17 @@
     height: fit-content;
     margin: 0 1rem;
     display: flex;
-    justify-content: space-between;
     background-color: rgb(205, 192, 192);
 }
 
 .nameContainer{
     display: flex;
+    width:16vw
 }
 .name{
     margin-left: 1rem;
-    max-width: 16 vw;
+}
+
+.hItem{
+    width:16vw
 }
