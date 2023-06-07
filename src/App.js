@@ -32,6 +32,30 @@ const personSchema = [
       min_value: 18,
     },
   },
+  {
+    type: "file",
+    name: "Profile",
+    // placeholder: "Upload Photo",
+    label: "Upload Photo",
+  },
+  {
+    type: "checkbox",
+    name: "one",
+    // placeholder: "Upload Photo",
+    label: "Option one",
+  },
+  {
+    type: "checkbox",
+    name: "two",
+    // placeholder: "Upload Photo",
+    label: "Option two",
+  },
+  {
+    type: "checkbox",
+    name: "three",
+    // placeholder: "Upload Photo",
+    label: "Option three",
+  },
 ];
 
 function App() {
